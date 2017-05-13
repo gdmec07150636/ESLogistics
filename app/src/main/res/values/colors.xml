@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="navigation_active">#607987</color>
-    <color name="navigation_inactive">#434343</color>
+    <color name="navigation_inactive">#646464</color>
+    <color name="background_main">#f2f2f2</color>
+    <color name="CYAN">#00FFFF</color>
 </resources>
