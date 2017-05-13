@@ -1,18 +1,17 @@
 package com.example.rynfar.eslogistics;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
 import java.util.ArrayList;
+
+import layout.MessageFragment;
 
 public class Main extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener {
     BottomNavigationBar bar;
@@ -28,7 +27,6 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
         bar
                 .setMode(BottomNavigationBar.MODE_FIXED)
                 //.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE)
-                //.setBarBackgroundColor("RED")
                 .setActiveColor(R.color.navigation_active)
                 .setInActiveColor(R.color.navigation_inactive)
                 .addItem(new BottomNavigationItem(R.mipmap.ic_home_white_24dp, R.string.navigation_home))
@@ -60,7 +58,7 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
         ArrayList<Fragment>fragments = new ArrayList<>();
         fragments.add(new BlankFragment("主页"));
         fragments.add(new BlankFragment("下单"));
-        fragments.add(new BlankFragment("消息"));
+        fragments.add(new MessageFragment());
         fragments.add(new BlankFragment("我的"));
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(),fragments);
         viewPager.setAdapter(adapter);
@@ -70,20 +68,11 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
     @Override
     public void onTabSelected(int position) {
         viewPager.setCurrentItem(position);
-        switch (position) {
-            case 0:
-                Log.d("0", "onTabSelected: ");
-                break;
-            case 1:
-                Log.d("1", "onTabSelected: ");
-                break;
-            case 2:
-                Log.d("2", "onTabSelected: ");
-                break;
-            case 3:
-                Log.d("3", "onTabSelected: ");
-                break;
+        if(position==2){
+            Main.this.setTitle("消息");
+            Main.this.setTheme(R.style.AppTheme);
         }
+        Log.d("555", "onTabSelected: "+position);
     }
 
     @Override
