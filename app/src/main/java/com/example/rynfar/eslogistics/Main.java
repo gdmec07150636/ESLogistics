@@ -11,8 +11,6 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
 import java.util.ArrayList;
 
-import layout.MessageFragment;
-
 public class Main extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener {
     BottomNavigationBar bar;
     ViewPager viewPager;
