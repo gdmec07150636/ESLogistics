@@ -22,7 +22,7 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
         viewPager = (ViewPager) findViewById(R.id.viewpager_main);
 
         bar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
-        bar
+        bar.setBarBackgroundColor(R.color.navigation_bg)
                 .setMode(BottomNavigationBar.MODE_FIXED)
                 //.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE)
                 .setActiveColor(R.color.navigation_active)
@@ -54,10 +54,10 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
 
     private void setupViewPager(ViewPager viewPager) {
         ArrayList<Fragment>fragments = new ArrayList<>();
-        fragments.add(new BlankFragment("主页"));
-        fragments.add(new BlankFragment("下单"));
         fragments.add(new MessageFragment());
-        fragments.add(new BlankFragment("我的"));
+        fragments.add(new MessageFragment());
+        fragments.add(new MessageFragment());
+        fragments.add(new MeFragment());
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(),fragments);
         viewPager.setAdapter(adapter);
     }
@@ -65,11 +65,7 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
 
     @Override
     public void onTabSelected(int position) {
-        viewPager.setCurrentItem(position);
-        if(position==2){
-            Main.this.setTitle("消息");
-            Main.this.setTheme(R.style.AppTheme);
-        }
+        viewPager.setCurrentItem(position,true);
         Log.d("555", "onTabSelected: "+position);
     }
 

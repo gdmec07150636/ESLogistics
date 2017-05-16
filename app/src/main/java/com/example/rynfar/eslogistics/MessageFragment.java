@@ -6,11 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-
-import com.example.rynfar.eslogistics.R;
+import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +30,8 @@ public class MessageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_message, container, false);
-        getActivity().setTitle(R.string.navigation_info);
+        Toolbar toolbar = (Toolbar) v.findViewById(R.id.message_toolbar);
+        toolbar.setTitle(R.string.message_title);
         ListView listView = (ListView) v.findViewById(R.id.message_list);
         List<Map<String, Object>> list = new ArrayList<>();
         initData(list);
