@@ -2,7 +2,9 @@ package com.example.rynfar.eslogistics;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,19 +27,20 @@ public class MeFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_me, container, false);
-        ListView listView = (ListView) view.findViewById(R.id.me_list);
+        RecyclerView listView = (RecyclerView) view.findViewById(R.id.me_list);
         List<Map<String, Object>> list = new ArrayList<>();
         initData(list);
-        String[] from = {"head", "title", "summary"};
-        int[] to = new int[]{R.id.message_head, R.id.message_title, R.id.message_summary};
-        SimpleAdapter adapter = new SimpleAdapter(getContext(), list, R.layout.message_item, from, to);
-        listView.setAdapter(adapter);
+        listView.setAdapter(null);
         return view;
     }
     private void initData(List<Map<String, Object>> list) {
@@ -49,4 +52,5 @@ public class MeFragment extends Fragment {
             list.add(map);
         }
     }
+
 }

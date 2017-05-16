@@ -54,8 +54,8 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
 
     private void setupViewPager(ViewPager viewPager) {
         ArrayList<Fragment>fragments = new ArrayList<>();
-        fragments.add(new MessageFragment());
-        fragments.add(new MessageFragment());
+        fragments.add(new HomeFragment());
+        fragments.add(new OrderFragment());
         fragments.add(new MessageFragment());
         fragments.add(new MeFragment());
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(),fragments);
