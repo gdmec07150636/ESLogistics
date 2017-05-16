@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -17,6 +18,8 @@ import java.util.Map;
 
 
 public class HomeFragment extends Fragment {
+
+    EditText searchText;
 
 
     public HomeFragment() {
@@ -33,6 +36,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
+        searchText = (EditText) v.findViewById(R.id.search_bar);
+        //searchText.setLines();
         ListView listView = (ListView) v.findViewById(R.id.home_list);
         List<Map<String, Object>> list = new ArrayList<>();
         initData(list);
