@@ -53,6 +53,7 @@ public class MeFragment extends Fragment {
         AppCompatActivity activity = (AppCompatActivity)getActivity();
         activity.setSupportActionBar(mToolbar);
         //.setDisplayHomeAsUpEnabled(true);
+        mToolbar.setTitle(R.string.navigation_mime);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.me_recycler_list);
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
