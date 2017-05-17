@@ -1,10 +1,15 @@
 package com.example.rynfar.eslogistics;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +27,16 @@ import java.util.Map;
  */
 public class MeFragment extends Fragment {
 
+    RecyclerView mRecyclerView;
+
+    Context context;
 
     public MeFragment() {
         // Required empty public constructor
+    }
+
+    public MeFragment(Context context) {
+        this.context = context;
     }
 
     @Override
@@ -37,20 +49,19 @@ public class MeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_me, container, false);
-        RecyclerView listView = (RecyclerView) view.findViewById(R.id.me_list);
-        List<Map<String, Object>> list = new ArrayList<>();
-        initData(list);
-        listView.setAdapter(null);
-        return view;
-    }
-    private void initData(List<Map<String, Object>> list) {
+        Toolbar mToolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        AppCompatActivity activity = (AppCompatActivity)getActivity();
+        activity.setSupportActionBar(mToolbar);
+        //.setDisplayHomeAsUpEnabled(true);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.me_recycler_list);
+        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        List<String> titles = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            Map<String, Object> map = new HashMap<>();
-            map.put("head", R.mipmap.ic_favorite_white_24dp);
-            map.put("title", "标题" + i);
-            map.put("summary", "内容摘要" + i);
-            list.add(map);
+            titles.add("设置项"+i);
         }
+        mRecyclerView.setAdapter(new MeRecyclerViewAdapter(getContext(), titles));
+        return view;
     }
 
 }

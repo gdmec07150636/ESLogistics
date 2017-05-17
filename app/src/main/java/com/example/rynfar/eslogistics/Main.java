@@ -65,7 +65,7 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
 
     @Override
     public void onTabSelected(int position) {
-        viewPager.setCurrentItem(position,true);
+        viewPager.setCurrentItem(position);
         Log.d("555", "onTabSelected: "+position);
     }
 
