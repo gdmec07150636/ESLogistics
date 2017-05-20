@@ -17,4 +17,7 @@
     <string name="phone_number">手机号码</string>
     <string name="telephone">固定电话</string>
     <string name="shipper_info">发货人信息</string>
+    <string name="quick_order">快速下单</string>
+    <string name="local">附近网点</string>
+    <string name="contacts">联系客服</string>
 </resources>

@@ -20,7 +20,6 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         viewPager = (ViewPager) findViewById(R.id.viewpager_main);
-
         bar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
         bar.setBarBackgroundColor(R.color.navigation_bg)
                 .setMode(BottomNavigationBar.MODE_FIXED)
@@ -29,7 +28,7 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
                 .setInActiveColor(R.color.navigation_inactive)
                 .addItem(new BottomNavigationItem(R.mipmap.ic_home_white_24dp, R.string.navigation_home))
                 .addItem(new BottomNavigationItem(R.mipmap.ic_book_white_24dp, R.string.navigation_order))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_find_replace_white_24dp,R.string.navigation_info))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_find_replace_white_24dp, R.string.navigation_info))
                 .addItem(new BottomNavigationItem(R.mipmap.ic_favorite_white_24dp, R.string.navigation_mime))
                 .initialise();
         bar.setTabSelectedListener(this);
@@ -52,13 +51,14 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
         setupViewPager(viewPager);
     }
 
+
     private void setupViewPager(ViewPager viewPager) {
-        ArrayList<Fragment>fragments = new ArrayList<>();
+        ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(new HomeFragment());
         fragments.add(new OrderFragment());
         fragments.add(new MessageFragment());
         fragments.add(new MeFragment());
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(),fragments);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), fragments);
         viewPager.setAdapter(adapter);
     }
 
@@ -66,7 +66,7 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
     @Override
     public void onTabSelected(int position) {
         viewPager.setCurrentItem(position);
-        Log.d("555", "onTabSelected: "+position);
+        Log.d("555", "onTabSelected: " + position);
     }
 
     @Override
