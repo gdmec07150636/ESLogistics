@@ -57,7 +57,7 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
         fragments.add(new HomeFragment());
         fragments.add(new OrderFragment());
         fragments.add(new MessageFragment());
-        fragments.add(new MeFragment());
+        fragments.add(new MeFragment(this));
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), fragments);
         viewPager.setAdapter(adapter);
     }
