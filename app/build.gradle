@@ -27,6 +27,9 @@ dependencies {
     // https://mvnrepository.com/artifact/com.ashokvarma.android/bottom-navigation-bar
     compile group: 'com.ashokvarma.android', name: 'bottom-navigation-bar', version: '1.4.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'net.qiujuer.genius:ui:2.0.0'
+    compile 'net.qiujuer.genius:res:2.0.0'
+    // use to bitmap blur and more
     compile 'net.qiujuer.genius:graphics:2.0.0'
     compile 'com.android.support:design:25.3.1'
     compile 'cn.carbs.android:AvatarImageView:1.0.4'
