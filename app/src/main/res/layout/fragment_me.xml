@@ -1,47 +1,55 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/head_appbar"
         android:layout_width="match_parent"
         android:layout_height="240dp">
 
         <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/head_collapsing"
+            android:id="@+id/collapsing_me"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="@drawable/toolbar_bg"
+
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/home_bg" />
+             
 
             <RelativeLayout
-                android:id="@+id/head_bg"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:background="@color/transparent"
-                android:scaleType="centerInside"
-                app:layout_collapseMode="parallax">
+                android:layout_height="240dp">
 
                 <cn.carbs.android.avatarimageview.library.AvatarImageView
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
                     android:id="@+id/head_icon"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@mipmap/home_bg"/>
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/home_bg" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/head_icon"
-                    android:layout_marginTop="16dp"
-                    android:gravity="center_horizontal"
-                    android:text="我的" />
+                    android:layout_below="@id/head_icon"
+                    android:layout_centerHorizontal="true"
+                    android:text="SSSSS" />
             </RelativeLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
+
     </android.support.design.widget.AppBarLayout>
 
     <LinearLayout

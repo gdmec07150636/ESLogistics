@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">ES物流</string>
-    <string name="navigation_home">主页</string>
-    <string name="navigation_order">下单</string>
-    <string name="navigation_info">消息</string>
-    <string name="navigation_mime">我的</string>
+    <string name="home">主页</string>
+    <string name="order">下单</string>
+    <string name="message">消息</string>
+    <string name="me">我的</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="message_title">消息中心</string>

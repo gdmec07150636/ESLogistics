@@ -17,5 +17,6 @@
     <color name="half_white">#7FFFFFFF</color>
     <color name="eighty_white">#CCFFFFFF</color>
     <color name="toolbar_bg">#f8f8f8</color>
+    <color name="toolbar_bg_sides">#fcfcfc</color>
     <color name="toolbar_fg">#101010</color>
 </resources>
