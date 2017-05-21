@@ -21,4 +21,6 @@
     <string name="quick_order">快速下单</string>
     <string name="local">附近网点</string>
     <string name="contacts">联系客服</string>
+    <string name="login_hint_name">用户名/手机号</string>
+    <string name="login_hint_pwd">密码</string>
 </resources>

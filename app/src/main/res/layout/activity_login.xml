@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.rynfar.eslogistics.LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/home_bg" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@color/black_alpha_112" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <EditText
+            android:id="@+id/login_username"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/login_edit_frame"
+            android:hint="@string/login_hint_name"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/half_white"
+            app:theme="@style/Genius.Widget.EditText" />
+
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/login_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/login_username"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_frame"
+            android:hint="@string/login_hint_pwd"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/half_white"
+            app:theme="@style/Genius.Widget.EditText" />
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/transparent_btn_bg"
+            android:layout_alignTop="@+id/login_pwd"
+            android:src="@mipmap/ic_home_white_24dp"
+
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>

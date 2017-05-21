@@ -44,7 +44,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignTop="@+id/search_bar"
                     android:layout_marginRight="20dp"
-                    android:background="@color/transparent"
+                    android:background="@drawable/transparent_btn_bg"
                     android:src="@mipmap/btn_code" />
             </RelativeLayout>
         </LinearLayout>
@@ -70,7 +70,7 @@
                 android:textColor="@color/white_alpha_224"
                 app:gTouchColor="@color/black_alpha_48"
                 app:gTouchCornerRadius="@dimen/len_12"
-                app:gTouchEffect="auto" />
+                app:gTouchEffect="press" />
 
             <net.qiujuer.genius.ui.widget.Button
                 android:id="@+id/home_btn_local"
@@ -84,7 +84,7 @@
                 android:textColor="@color/white_alpha_224"
                 app:gTouchColor="@color/black_alpha_48"
                 app:gTouchCornerRadius="@dimen/len_12"
-                app:gTouchEffect="auto" />
+                app:gTouchEffect="press" />
 
             <net.qiujuer.genius.ui.widget.Button
                 android:id="@+id/home_btn_contact"
@@ -98,7 +98,7 @@
                 android:textColor="@color/white_alpha_224"
                 app:gTouchColor="@color/black_alpha_48"
                 app:gTouchCornerRadius="@dimen/len_12"
-                app:gTouchEffect="auto" />
+                app:gTouchEffect="press" />
 
 
         </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.rynfar.eslogistics;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -35,6 +36,7 @@ public class MeFragment extends Fragment {
     RecyclerView mRecyclerView;
     Context context;
     Bitmap bitmap;
+    ImageView headbg;
 
     public MeFragment() {
 
@@ -61,9 +63,8 @@ public class MeFragment extends Fragment {
         //toolbar.setLogo(R.mipmap.home_bg);
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.collapsing_me);
         collapsingToolbarLayout.setExpandedTitleMarginStart(-1000);
-
-        ImageView img = (ImageView) view.findViewById(R.id.head_bg);
-        img.setImageBitmap(bitmap);
+        headbg = (ImageView) view.findViewById(R.id.head_bg);
+        headbg.setImageBitmap(bitmap);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.me_recycler_list);
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -72,6 +73,12 @@ public class MeFragment extends Fragment {
             titles.add("设置项" + i);
         }
         mRecyclerView.setAdapter(new MeRecyclerViewAdapter(getContext(), titles));
+        headbg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),LoginActivity.class));
+            }
+        });
         return view;
     }
 
