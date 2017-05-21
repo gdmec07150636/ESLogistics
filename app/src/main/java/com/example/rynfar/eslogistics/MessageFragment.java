@@ -19,10 +19,16 @@ import java.util.Map;
  * A simple {@link Fragment} subclass.
  */
 public class MessageFragment extends Fragment {
-
+    List<Map<String, Object>> list;
 
     public MessageFragment() {
         // Required empty public constructor
+        init();
+    }
+
+    private void init() {
+        list = new ArrayList<>();
+        initData(list);
     }
 
 
@@ -33,8 +39,8 @@ public class MessageFragment extends Fragment {
         Toolbar toolbar = (Toolbar) v.findViewById(R.id.message_toolbar);
         toolbar.setTitle(R.string.message_title);
         ListView listView = (ListView) v.findViewById(R.id.message_list);
-        List<Map<String, Object>> list = new ArrayList<>();
-        initData(list);
+        //List<Map<String, Object>> list = new ArrayList<>();
+        //initData(list);
         String[] from = {"head", "title", "summary"};
         int[] to = new int[]{R.id.message_head, R.id.message_title, R.id.message_summary};
         SimpleAdapter adapter = new SimpleAdapter(getContext(), list, R.layout.message_item, from, to);

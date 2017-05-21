@@ -54,9 +54,9 @@
             android:layout_height="70dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:paddingTop="16dp"
             android:background="@color/transparent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="16dp">
 
             <net.qiujuer.genius.ui.widget.Button
                 android:id="@+id/home_btn_order"
@@ -65,9 +65,11 @@
                 android:layout_marginLeft="@dimen/len_4"
                 android:layout_marginRight="@dimen/len_4"
                 android:layout_weight="1"
+                android:background="@drawable/btn_home_1"
                 android:text="@string/quick_order"
                 android:textColor="@color/white_alpha_224"
                 app:gTouchColor="@color/black_alpha_48"
+                app:gTouchCornerRadius="@dimen/len_12"
                 app:gTouchEffect="auto" />
 
             <net.qiujuer.genius.ui.widget.Button
@@ -77,9 +79,11 @@
                 android:layout_marginLeft="@dimen/len_4"
                 android:layout_marginRight="@dimen/len_4"
                 android:layout_weight="1"
+                android:background="@drawable/btn_home_2"
                 android:text="@string/local"
                 android:textColor="@color/white_alpha_224"
                 app:gTouchColor="@color/black_alpha_48"
+                app:gTouchCornerRadius="@dimen/len_12"
                 app:gTouchEffect="auto" />
 
             <net.qiujuer.genius.ui.widget.Button
@@ -89,9 +93,11 @@
                 android:layout_marginLeft="@dimen/len_4"
                 android:layout_marginRight="@dimen/len_4"
                 android:layout_weight="1"
+                android:background="@drawable/btn_home_3"
                 android:text="@string/contacts"
                 android:textColor="@color/white_alpha_224"
                 app:gTouchColor="@color/black_alpha_48"
+                app:gTouchCornerRadius="@dimen/len_12"
                 app:gTouchEffect="auto" />
 
 
