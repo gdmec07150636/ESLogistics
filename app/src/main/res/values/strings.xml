@@ -11,11 +11,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="newest_info">最新信息</string>
-    <string name="shipper">发货人</string>
-    <string name="shipper_name">发货人</string>
-    <string name="shipper_phone">手机号码</string>
-    <string name="phone_number">手机号码</string>
-    <string name="telephone">固定电话</string>
+    <string name="shipper">发货人：</string>
+    <string name="shipper_name">发货人：</string>
+    <string name="shipper_phone">手机号码：</string>
+    <string name="phone_number">手机号码：</string>
+    <string name="telephone">固定电话：</string>
     <string name="shipper_info">发货人信息</string>
     <string name="receiver_info">收货人信息</string>
     <string name="quick_order">快速下单</string>
