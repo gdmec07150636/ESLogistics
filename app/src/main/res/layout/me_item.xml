@@ -30,5 +30,5 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:background="#22607987" />
+        android:background="@color/grey_200" />
 </LinearLayout>

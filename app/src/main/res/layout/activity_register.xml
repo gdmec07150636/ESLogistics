@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_200"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.example.rynfar.eslogistics.LoginActivity">
+    <!--背景-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/home_bg" />
+
+    <!--蒙版-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@color/black_alpha_144" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp">
+        <!--用户名-->
+        <EditText
+            android:id="@+id/register_username"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/login_edit_frame"
+            android:hint="@string/username"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_alpha_224"
+            app:theme="@style/Genius.Widget.EditText" />
+        <!--手机号-->
+        <EditText
+            android:id="@+id/register_phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/register_username"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_frame"
+            android:hint="@string/phone_number"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_alpha_224"
+            app:theme="@style/Genius.Widget.EditText" />
+        <!--验证码-->
+        <EditText
+            android:id="@+id/register_code"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/register_phone"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_frame"
+            android:hint="@string/verification_code"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_alpha_224"
+            app:theme="@style/Genius.Widget.EditText" />
+        <!--密码-->
+        <EditText
+            android:id="@+id/register_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/register_code"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_frame"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_alpha_224"
+            app:theme="@style/Genius.Widget.EditText" />
+        <!--重复密码-->
+        <EditText
+            android:id="@+id/register_pwd_re"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/register_pwd"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/login_edit_frame"
+            android:hint="@string/password_re"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_alpha_224"
+            app:theme="@style/Genius.Widget.EditText" />
+
+        <!--注册-->
+        <net.qiujuer.genius.ui.widget.Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/register_pwd_re"
+            android:layout_marginTop="16dp"
+            android:background="@color/white_alpha_240"
+            android:text="@string/register"
+            android:textColor="@color/grey_700"
+            android:textSize="16sp" />
+
+        <!--微信登录-->
+        <net.qiujuer.genius.ui.widget.Button
+            android:id="@+id/login_weChat"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_below="@id/login_btn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:background="@mipmap/wechat"
+            android:textColor="@color/grey_700"
+            app:gTouchEffect="ease"
+            android:textSize="16sp" />
+        <!--忘记密码-->
+        <net.qiujuer.genius.ui.widget.Button
+            android:id="@+id/register_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_weChat"
+            android:background="@color/transparent"
+            android:text="@string/register_question"
+            android:textColor="@color/white_alpha_224"
+            android:textSize="@dimen/font_14" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
