@@ -4,30 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="com.example.rynfar.eslogistics.LoginActivity">
-
+    <!--背景-->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@mipmap/home_bg" />
 
+    <!--蒙版-->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@color/black_alpha_112" />
+        android:src="@color/black_alpha_144" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:orientation="vertical"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
-
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp">
+        <!--手机号-->
         <EditText
             android:id="@+id/login_username"
             android:layout_width="match_parent"
@@ -37,11 +39,10 @@
             android:hint="@string/login_hint_name"
             android:maxLines="1"
             android:textColor="@color/white"
-            android:textColorHint="@color/half_white"
+            android:textColorHint="@color/white_alpha_224"
             app:theme="@style/Genius.Widget.EditText" />
-
+        <!--密码-->
         <EditText
-            android:inputType="textPassword"
             android:id="@+id/login_pwd"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -49,23 +50,61 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:background="@drawable/login_edit_frame"
-            android:hint="@string/login_hint_pwd"
+            android:hint="@string/password"
+            android:inputType="textPassword"
             android:maxLines="1"
             android:textColor="@color/white"
-            android:textColorHint="@color/half_white"
+            android:textColorHint="@color/white_alpha_224"
             app:theme="@style/Genius.Widget.EditText" />
-        <ImageButton
+        <!--眼睛-->
+        <net.qiujuer.genius.ui.widget.Button
+            android:id="@+id/pwd_visible"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/transparent_btn_bg"
             android:layout_alignTop="@+id/login_pwd"
-            android:src="@mipmap/ic_home_white_24dp"
-
-            />
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_remove_red_eye_white_24dp"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8" />
+        <!--登录-->
+        <net.qiujuer.genius.ui.widget.Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_pwd"
+            android:layout_marginTop="16dp"
+            android:background="@color/white_alpha_240"
+            android:text="@string/login"
+            android:textColor="@color/grey_700"
+            android:textSize="16sp" />
+        <!--注册-->
+        <net.qiujuer.genius.ui.widget.Button
+            android:id="@+id/register_btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_btn"
+            android:layout_marginTop="16dp"
+            android:background="@color/transparent"
+            android:text="@string/register_account"
+            android:textColor="@color/white_alpha_240"
+            android:textSize="16sp"
+            app:gTouchColor="@color/white_alpha_160"
+            app:gTouchEffect="press" />
+        <!--忘记密码-->
+        <net.qiujuer.genius.ui.widget.Button
+            android:id="@+id/forget_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/register_btn_login"
+            android:background="@color/transparent"
+            android:text="@string/forget_pwd"
+            android:textColor="@color/white_alpha_240"
+            android:textSize="16sp"
+            app:gTouchColor="@color/white_alpha_160"
+            app:gTouchEffect="press" />
     </RelativeLayout>
 
 

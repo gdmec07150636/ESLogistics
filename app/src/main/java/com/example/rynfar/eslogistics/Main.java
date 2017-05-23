@@ -26,10 +26,10 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
                 //.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_RIPPLE)
                 .setActiveColor(R.color.navigation_active)
                 .setInActiveColor(R.color.navigation_inactive)
-                .addItem(new BottomNavigationItem(R.mipmap.ic_home_white_24dp, R.string.home))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_book_white_24dp, R.string.order))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_find_replace_white_24dp, R.string.message))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_favorite_white_24dp, R.string.me))
+                .addItem(new BottomNavigationItem(R.drawable.ic_home_white_24dp, R.string.home))
+                .addItem(new BottomNavigationItem(R.drawable.ic_assignment_white_24dp, R.string.order))
+                .addItem(new BottomNavigationItem(R.drawable.ic_chat_bubble_outline_white_24dp, R.string.message))
+                .addItem(new BottomNavigationItem(R.drawable.ic_person_white_24dp, R.string.me))
                 .initialise();
         bar.setTabSelectedListener(this);
 

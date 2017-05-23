@@ -1,11 +1,13 @@
 package com.example.rynfar.eslogistics;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -16,7 +18,6 @@ import java.util.List;
 public class MeRecyclerViewAdapter extends RecyclerView.Adapter<MyViewHolder> {
     private List<String> titles;
     private Context context;
-
     public MeRecyclerViewAdapter(Context context, List<String> titles) {
         this.titles = titles;
         this.context = context;
@@ -30,11 +31,31 @@ public class MeRecyclerViewAdapter extends RecyclerView.Adapter<MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         ViewGroup.LayoutParams params = holder.itemView.getLayoutParams();
         params.height = RecyclerView.LayoutParams.WRAP_CONTENT;
         holder.itemView.setLayoutParams(params);
         holder.mTextView.setText(titles.get(position));
+        holder.viewList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(v.getContext(),titles.get(position),Toast.LENGTH_SHORT).show();
+                switch (position){
+                    case 0:
+                        Intent intent = new Intent(v.getContext(),OrderAllActivity.class);
+                        v.getContext().startActivity(intent);
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                }
+            }
+        });
     }
 
     @Override
@@ -45,9 +66,10 @@ public class MeRecyclerViewAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
 class MyViewHolder extends RecyclerView.ViewHolder {
     TextView mTextView;
-
+    View viewList;
     public MyViewHolder(View itemView) {
         super(itemView);
+        viewList = itemView;
         mTextView = (TextView) itemView.findViewById(R.id.me_setting_title);
     }
 }

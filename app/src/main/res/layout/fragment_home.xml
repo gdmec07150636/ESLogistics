@@ -38,14 +38,16 @@
                     android:maxLines="1"
                     android:textSize="12sp" />
 
-                <ImageButton
+                <net.qiujuer.genius.ui.widget.Button
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:scaleY="0.6"
+                    android:scaleX="0.6"
                     android:layout_alignParentEnd="true"
                     android:layout_alignTop="@+id/search_bar"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/transparent_btn_bg"
-                    android:src="@mipmap/btn_code" />
+                    app:gTouchEffect="ease"
+                    android:background="@mipmap/btn_code" />
             </RelativeLayout>
         </LinearLayout>
 

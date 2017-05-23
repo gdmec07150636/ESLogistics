@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
     private void initData(List<Map<String, Object>> list) {
         for (int i = 0; i < 100; i++) {
             Map<String, Object> map = new HashMap<>();
-            map.put("head", R.mipmap.ic_favorite_white_24dp);
+            map.put("head", R.drawable.ic_home_white_24dp);
             map.put("title", "标题" + i);
             map.put("summary", "内容摘要" + i);
             list.add(map);
