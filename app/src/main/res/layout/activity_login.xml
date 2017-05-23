@@ -29,7 +29,7 @@
         android:layout_marginBottom="48dp"
         android:layout_marginLeft="48dp"
         android:layout_marginRight="48dp">
-
+        <!--手机号-->
         <EditText
             android:id="@+id/login_username"
             android:layout_width="match_parent"
@@ -41,8 +41,8 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white_alpha_224"
             app:theme="@style/Genius.Widget.EditText" />
-
-        <net.qiujuer.genius.ui.widget.EditText
+        <!--密码-->
+        <EditText
             android:id="@+id/login_pwd"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -56,7 +56,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white_alpha_224"
             app:theme="@style/Genius.Widget.EditText" />
-
+        <!--眼睛-->
         <net.qiujuer.genius.ui.widget.Button
             android:id="@+id/pwd_visible"
             android:layout_width="40dp"
@@ -64,12 +64,12 @@
             android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/login_pwd"
             android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_remove_red_eye_white_24dp"
             android:paddingBottom="8dp"
             android:paddingTop="8dp"
             android:scaleX="0.8"
-            android:scaleY="0.8"
-            android:background="@drawable/ic_remove_red_eye_white_24dp" />
-
+            android:scaleY="0.8" />
+        <!--登录-->
         <net.qiujuer.genius.ui.widget.Button
             android:id="@+id/login_btn"
             android:layout_width="match_parent"
@@ -80,7 +80,7 @@
             android:text="@string/login"
             android:textColor="@color/grey_700"
             android:textSize="16sp" />
-
+        <!--注册-->
         <net.qiujuer.genius.ui.widget.Button
             android:id="@+id/register_btn_login"
             android:layout_width="match_parent"
@@ -93,7 +93,7 @@
             android:textSize="16sp"
             app:gTouchColor="@color/white_alpha_160"
             app:gTouchEffect="press" />
-
+        <!--忘记密码-->
         <net.qiujuer.genius.ui.widget.Button
             android:id="@+id/forget_pwd"
             android:layout_width="match_parent"

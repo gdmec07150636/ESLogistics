@@ -12,8 +12,8 @@
         <ImageView
             android:id="@+id/me_setting_icon"
             android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_person_white_24dp" />
+            android:layout_height="50dp"
+            android:src="@mipmap/home_bg" />
 
         <TextView
             android:id="@+id/me_setting_title"

@@ -30,6 +30,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="48dp"
         android:layout_marginRight="48dp">
+
         <!--用户名-->
         <EditText
             android:id="@+id/register_username"
@@ -42,6 +43,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white_alpha_224"
             app:theme="@style/Genius.Widget.EditText" />
+
         <!--手机号-->
         <EditText
             android:id="@+id/register_phone"
@@ -57,6 +59,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white_alpha_224"
             app:theme="@style/Genius.Widget.EditText" />
+
         <!--验证码-->
         <EditText
             android:id="@+id/register_code"
@@ -72,6 +75,20 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white_alpha_224"
             app:theme="@style/Genius.Widget.EditText" />
+
+        <!--获取验证码-->
+        <net.qiujuer.genius.ui.widget.Button
+            android:id="@+id/get_valid_code"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/register_code"
+            android:background="@color/white_alpha_240"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="@string/get_valid_code"
+            android:textColor="@color/grey_700" />
+
         <!--密码-->
         <EditText
             android:id="@+id/register_pwd"
@@ -87,6 +104,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white_alpha_224"
             app:theme="@style/Genius.Widget.EditText" />
+
         <!--重复密码-->
         <EditText
             android:id="@+id/register_pwd_re"
@@ -125,8 +143,9 @@
             android:layout_marginTop="16dp"
             android:background="@mipmap/wechat"
             android:textColor="@color/grey_700"
-            app:gTouchEffect="ease"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            app:gTouchEffect="ease" />
+
         <!--忘记密码-->
         <net.qiujuer.genius.ui.widget.Button
             android:id="@+id/register_question"

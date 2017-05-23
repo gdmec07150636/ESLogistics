@@ -76,32 +76,34 @@ public class MeFragment extends Fragment {
         headbg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),LoginActivity.class));
+                startActivity(new Intent(getActivity(), LoginActivity.class));
             }
         });
         return view;
     }
 
     public void Martix(Bitmap bitmap) {
-        Log.d(TAG, "Martix: "+bitmap.getByteCount());
+        Log.d(TAG, "Martix: " + bitmap.getByteCount());
         Matrix matrix = new Matrix();
-        matrix.setScale(0.01f, 0.01f);
+        matrix.setScale(0.1f, 0.1f);
         bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
                 bitmap.getHeight(), matrix, true);
-        if(bitmap.getByteCount()/1024>10){
+        if (bitmap.getByteCount() / 1024 > 10) {
             Martix(bitmap);
         }
 
-        Log.d(TAG, "Martix: "+bitmap.getByteCount());
+        Log.d(TAG, "Martix: " + bitmap.getByteCount());
     }
 
-    private class LoadBitmap extends Thread{
+    private class LoadBitmap extends Thread {
         @Override
         public void run() {
             super.run();
-            bitmap = BitmapFactory.decodeResource(context.getResources(),R.mipmap.home_bg);
+            BitmapFactory.Options options2 = new BitmapFactory.Options();
+            options2.inPreferredConfig = Bitmap.Config.RGB_565;
+            bitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.home_bg,options2);
             Martix(bitmap);
-            Blur.onStackBlur(bitmap,80);
+            Blur.onStackBlur(bitmap, 90);
         }
     }
 }
