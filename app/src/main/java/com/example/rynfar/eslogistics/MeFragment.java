@@ -69,9 +69,14 @@ public class MeFragment extends Fragment {
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         List<String> titles = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        /*for (int i = 0; i < 4; i++) {
             titles.add("设置项" + i);
-        }
+        }*/
+        titles.add("全部订单");
+        titles.add("我的地址");
+        titles.add("实名认证");
+        titles.add("反馈意见");
+        titles.add("关于我们");
         mRecyclerView.setAdapter(new MeRecyclerViewAdapter(getContext(), titles));
         headbg.setOnClickListener(new View.OnClickListener() {
             @Override
