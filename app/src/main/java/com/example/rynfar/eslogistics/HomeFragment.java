@@ -1,11 +1,13 @@
 package com.example.rynfar.eslogistics;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -17,7 +19,7 @@ import java.util.Map;
 
 
 public class HomeFragment extends Fragment {
-
+    private Button homeBtnPoint;
     EditText searchText;
 
 
@@ -44,6 +46,14 @@ public class HomeFragment extends Fragment {
         int[] to = new int[]{R.id.message_head, R.id.message_title, R.id.message_summary};
         SimpleAdapter adapter = new SimpleAdapter(getContext(), list, R.layout.message_item, from, to);
         listView.setAdapter(adapter);
+        homeBtnPoint = (Button) v.findViewById(R.id.home_btn_point);
+        homeBtnPoint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),MapActivity.class);
+                startActivity(intent);
+            }
+        });
         return v;
     }
     private void initData(List<Map<String, Object>> list) {

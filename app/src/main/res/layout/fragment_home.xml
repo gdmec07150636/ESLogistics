@@ -75,7 +75,7 @@
                 app:gTouchEffect="press" />
 
             <net.qiujuer.genius.ui.widget.Button
-                android:id="@+id/home_btn_local"
+                android:id="@+id/home_btn_point"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/len_52"
                 android:layout_marginLeft="@dimen/len_4"
