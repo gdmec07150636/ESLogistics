@@ -277,6 +277,5 @@ public class OrderFragment extends Fragment {
         pay_mode = (Spinner) v.findViewById(R.id.pay_mode);
         receive_article = (CheckBox) v.findViewById(R.id.receive_article);
         submit_order = (Button) v.findViewById(R.id.submit_order);
-
     }
 }
