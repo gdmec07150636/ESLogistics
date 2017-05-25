@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.io.BufferedReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public class LoginActivity extends AppCompatActivity {
 
     @Override
@@ -29,12 +33,30 @@ public class LoginActivity extends AppCompatActivity {
                 switch (event.getAction()){
                    case MotionEvent.ACTION_BUTTON_PRESS:
                     editText.setInputType(0);
-
                 }
-
                 return false;
             }
         });
 
+        Button loginbtn = (Button) findViewById(R.id.login_btn);
+        loginbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
     }
+
+    private void sendRequestWithHttp(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                HttpURLConnection connection =null;
+                BufferedReader reader =null;
+            }
+        });
+    }
+
 }
