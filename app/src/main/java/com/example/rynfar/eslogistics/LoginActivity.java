@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
             public void run() {
                 HttpURLConnection connection =null;
                 BufferedReader reader =null;
-                URL url = new URL()
             }
         });
     }
