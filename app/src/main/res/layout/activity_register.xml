@@ -53,7 +53,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/login_edit_frame"
             android:hint="@string/phone_number"
-            android:inputType="textPassword"
+            android:inputType="phone"
             android:maxLines="1"
             android:textColor="@color/white"
             android:textColorHint="@color/white_alpha_224" />
@@ -118,7 +118,7 @@
 
         <!--注册-->
         <net.qiujuer.genius.ui.widget.Button
-            android:id="@+id/login_btn"
+            android:id="@+id/register_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/register_pwd_re"
@@ -133,7 +133,7 @@
             android:id="@+id/login_weChat"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:layout_below="@id/login_btn"
+            android:layout_below="@id/register_btn"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:background="@mipmap/wechat"
