@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -53,9 +54,10 @@
                     android:gravity="right|center_vertical"
                     android:text="@string/shipper_name"
                     android:textSize="16sp" />
-<!--发货人-->
+                <!--发货人-->
                 <EditText
-                    android:layout_width="199dp"
+                    android:id="@+id/shipper_name"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -75,10 +77,10 @@
                     android:gravity="right|center_vertical"
                     android:text="@string/phone_number"
                     android:textSize="16sp" />
-<!--手机号码-->
+                <!--手机号码-->
                 <EditText
-                    android:id="@+id/editText4"
-                    android:layout_width="199dp"
+                    android:id="@+id/shipper_phone"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -100,9 +102,10 @@
                     android:inputType="phone"
                     android:text="@string/telephone"
                     android:textSize="16sp" />
-<!--固定电话-->
+                <!--固定电话-->
                 <EditText
-                    android:layout_width="199dp"
+                    android:id="@+id/shipper_tel"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -122,10 +125,10 @@
                     android:gravity="right|center_vertical"
                     android:text="发货地址："
                     android:textSize="16sp" />
-<!--发货-省-->
+                <!--发货-省-->
                 <Spinner
-                    android:id="@+id/spinner3"
-                    android:layout_width="199dp"
+                    android:id="@+id/shipper_province"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -141,9 +144,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
-<!--发货-市-->
+                <!--发货-市-->
                 <Spinner
-                    android:layout_width="199dp"
+                    android:id="@+id/shipper_city"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="116dp"
@@ -158,10 +162,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
-<!--发货-区-->
+                <!--发货-区-->
                 <Spinner
-                    android:id="@+id/spinner"
-                    android:layout_width="199dp"
+                    android:id="@+id/shipper_area"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="116dp"
@@ -170,10 +174,10 @@
                     android:background="@drawable/edit_bg"></Spinner>
 
             </LinearLayout>
-<!--发货-门牌号-->
+            <!--发货-门牌号-->
             <EditText
-                android:id="@+id/editText"
-                android:layout_width="199dp"
+                android:id="@+id/shipper_location_detail"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="116dp"
@@ -181,7 +185,8 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/edit_bg"
                 android:inputType="textMultiLine"
-                android:lines="3" />
+                android:lines="3"
+                android:hint="街道路门牌号"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -194,9 +199,10 @@
                     android:gravity="right|center_vertical"
                     android:text="发货网点："
                     android:textSize="16sp" />
-<!--发货网点-省-->
+                <!--发货网点-省-->
                 <Spinner
-                    android:layout_width="199dp"
+                    android:id="@+id/point_province"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -209,9 +215,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
-<!--发货网点-市-->
+                <!--发货网点-市-->
                 <Spinner
-                    android:layout_width="199dp"
+                    android:id="@+id/point_city"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="116dp"
@@ -224,9 +231,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
-<!--发货网点-区-->
+                <!--发货网点-区-->
                 <Spinner
-                    android:layout_width="199dp"
+                    android:id="@+id/point_area"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="116dp"
@@ -239,9 +247,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
-<!--发货网点-具体地点-->
+                <!--发货网点-具体地点-->
                 <Spinner
-                    android:layout_width="199dp"
+                    android:id="@+id/point_detail"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="116dp"
@@ -257,6 +266,7 @@
                 android:background="@color/half_grey" />
 
             <TextView
+                android:id="@+id/receiver_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -283,9 +293,10 @@
                     android:gravity="right|center_vertical"
                     android:text="收货人："
                     android:textSize="16sp" />
-<!--收货人-->
+                <!--收货人-->
                 <EditText
-                    android:layout_width="199dp"
+                    android:id="@+id/receiver_name"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -305,10 +316,10 @@
                     android:gravity="right|center_vertical"
                     android:text="@string/phone_number"
                     android:textSize="16sp" />
-<!--收货人-手机号-->
+                <!--收货人-手机号-->
                 <EditText
-                    android:id="@+id/editText2"
-                    android:layout_width="199dp"
+                    android:id="@+id/receiver_phone"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -330,9 +341,10 @@
                     android:inputType="phone"
                     android:text="@string/telephone"
                     android:textSize="16sp" />
-<!--收货人-固定电话-->
+                <!--收货人-固定电话-->
                 <EditText
-                    android:layout_width="199dp"
+                    android:id="@+id/receiver_tel"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -352,9 +364,10 @@
                     android:gravity="right|center_vertical"
                     android:text="收货地址："
                     android:textSize="16sp" />
-<!--收货地址-省-->
+                <!--收货地址-省-->
                 <Spinner
-                    android:layout_width="199dp"
+                    android:id="@+id/receiver_province"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -370,9 +383,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
-<!--收货地址-市-->
+                <!--收货地址-市-->
                 <Spinner
-                    android:layout_width="199dp"
+                    android:id="@+id/receiver_city"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="116dp"
@@ -388,29 +402,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
-<!--收货地址-区-->
+                <!--收货地址-区-->
                 <Spinner
-                    android:id="@+id/spinner1"
-                    android:layout_width="199dp"
+                    android:id="@+id/receiver_area"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="116dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/edit_bg">
-                </Spinner>
+                    android:background="@drawable/edit_bg"></Spinner>
             </LinearLayout>
-<!--收货地址-门牌号-->
+            <!--收货地址-门牌号-->
             <EditText
-                android:id="@+id/editText3"
-                android:layout_width="199dp"
+                android:id="@+id/receiver_detail"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="116dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:inputType="textMultiLine"
-                android:lines="3" />
+                android:background="@drawable/edit_bg"
+                android:lines="3"
+                android:hint="街道路门牌号"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -444,9 +459,10 @@
                     android:gravity="right|center_vertical"
                     android:text="货物名称："
                     android:textSize="16sp" />
-<!--货物名称-->
+                <!--货物名称-->
                 <EditText
-                    android:layout_width="199dp"
+                    android:id="@+id/good_name"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -466,9 +482,10 @@
                     android:gravity="right|center_vertical"
                     android:text="货物重量："
                     android:textSize="16sp" />
-<!--货物重量-->
+                <!--货物重量-->
                 <EditText
-                    android:layout_width="199dp"
+                    android:id="@+id/good_weight"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -493,9 +510,10 @@
                     android:gravity="right|center_vertical"
                     android:text="货物体积："
                     android:textSize="16sp" />
-<!--货物体积-->
+                <!--货物体积-->
                 <EditText
-                    android:layout_width="199dp"
+                    android:id="@+id/good_volume"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -521,9 +539,10 @@
                     android:gravity="right|center_vertical"
                     android:text="货物件数："
                     android:textSize="16sp" />
-<!--货物件数-->
+                <!--货物件数-->
                 <EditText
-                    android:layout_width="199dp"
+                    android:id="@+id/good_count"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -548,9 +567,10 @@
                     android:gravity="right|center_vertical"
                     android:text="货物包装："
                     android:textSize="16sp" />
-<!--货物包装-->
+                <!--货物包装-->
                 <EditText
-                    android:layout_width="199dp"
+                    android:id="@+id/good_package"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -608,9 +628,10 @@
                     android:gravity="right|center_vertical"
                     android:text="送货方式："
                     android:textSize="16sp" />
-<!--送货方式-->
+                <!--送货方式-->
                 <Spinner
-                    android:layout_width="199dp"
+                    android:id="@+id/ship_mode"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -634,9 +655,10 @@
                     android:gravity="right|center_vertical"
                     android:text="付款方式："
                     android:textSize="16sp" />
-<!--付款方式-->
+                <!--付款方式-->
                 <Spinner
-                    android:layout_width="199dp"
+                    android:id="@+id/pay_mode"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -657,9 +679,10 @@
                     android:gravity="right|center_vertical"
                     android:text="托运备注："
                     android:textSize="16sp" />
-<!--托运备注-->
+                <!--托运备注-->
                 <EditText
-                    android:layout_width="199dp"
+                    android:id="@+id/ship_mark"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
@@ -667,6 +690,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/edit_bg"
                     android:inputType="textMultiLine"
+                    android:hint="输入内容不得超过80个字"
                     android:lines="3" />
             </LinearLayout>
 
@@ -674,10 +698,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="90dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="80dp"
                 android:orientation="horizontal">
-<!--接受条款-->
+                <!--接受条款-->
                 <CheckBox
+                    android:id="@+id/receive_article"
                     android:layout_width="220dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|center_vertical"
@@ -689,12 +714,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
-<!--提交订单-->
+                <!--提交订单-->
                 <net.qiujuer.genius.ui.widget.Button
+                    android:id="@+id/submit_order"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/green_300"
