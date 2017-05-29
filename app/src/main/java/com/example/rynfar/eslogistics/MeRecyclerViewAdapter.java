@@ -6,8 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -18,9 +18,12 @@ import java.util.List;
 public class MeRecyclerViewAdapter extends RecyclerView.Adapter<MyViewHolder> {
     private List<String> titles;
     private Context context;
-    public MeRecyclerViewAdapter(Context context, List<String> titles) {
+    private List<Integer> icons;
+
+    public MeRecyclerViewAdapter(Context context, List<String> titles, List<Integer> icons) {
         this.titles = titles;
         this.context = context;
+        this.icons = icons;
     }
 
     @Override
@@ -36,13 +39,14 @@ public class MeRecyclerViewAdapter extends RecyclerView.Adapter<MyViewHolder> {
         params.height = RecyclerView.LayoutParams.WRAP_CONTENT;
         holder.itemView.setLayoutParams(params);
         holder.mTextView.setText(titles.get(position));
+        holder.mImageView.setImageResource(icons.get(position));
         holder.viewList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(v.getContext(),titles.get(position),Toast.LENGTH_SHORT).show();
-                switch (position){
+                switch (position) {
                     case 0:
-                        Intent intent = new Intent(v.getContext(),OrderAllActivity.class);
+                        Intent intent = new Intent(v.getContext(), OrderAllActivity.class);
                         v.getContext().startActivity(intent);
                         break;
                     case 1:
@@ -66,10 +70,13 @@ public class MeRecyclerViewAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
 class MyViewHolder extends RecyclerView.ViewHolder {
     TextView mTextView;
+    ImageView mImageView;
     View viewList;
+
     public MyViewHolder(View itemView) {
         super(itemView);
         viewList = itemView;
         mTextView = (TextView) itemView.findViewById(R.id.me_setting_title);
+        mImageView = (ImageView) itemView.findViewById(R.id.me_setting_icon);
     }
 }

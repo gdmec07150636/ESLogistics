@@ -69,15 +69,21 @@ public class MeFragment extends Fragment {
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         List<String> titles = new ArrayList<>();
+        List<Integer> icons = new ArrayList<>();
         /*for (int i = 0; i < 4; i++) {
             titles.add("设置项" + i);
         }*/
+        icons.add(R.drawable.ic_home_black_24dp);
         titles.add("全部订单");
+        icons.add(R.drawable.ic_keyboard_arrow_left_black_24dp);
         titles.add("我的地址");
+        icons.add(R.drawable.ic_dashboard_black_24dp);
         titles.add("实名认证");
+        icons.add(R.drawable.ic_notifications_black_24dp);
         titles.add("反馈意见");
+        icons.add(R.drawable.ic_home_black_24dp);
         titles.add("关于我们");
-        mRecyclerView.setAdapter(new MeRecyclerViewAdapter(getContext(), titles));
+        mRecyclerView.setAdapter(new MeRecyclerViewAdapter(getContext(), titles, icons));
         headbg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,11 +99,11 @@ public class MeFragment extends Fragment {
         matrix.setScale(0.1f, 0.1f);
         bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
                 bitmap.getHeight(), matrix, true);
+        Log.d(TAG, "Martix: " + bitmap.getByteCount());
         if (bitmap.getByteCount() / 1024 > 10) {
             Martix(bitmap);
         }
 
-        Log.d(TAG, "Martix: " + bitmap.getByteCount());
     }
 
     private class LoadBitmap extends Thread {
@@ -106,7 +112,7 @@ public class MeFragment extends Fragment {
             super.run();
             BitmapFactory.Options options2 = new BitmapFactory.Options();
             options2.inPreferredConfig = Bitmap.Config.RGB_565;
-            bitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.home_bg,options2);
+            bitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.home_bg, options2);
             Martix(bitmap);
             Blur.onStackBlur(bitmap, 90);
         }

@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey_200"
-    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="com.example.rynfar.eslogistics.LoginActivity">
     <!--背景-->
@@ -31,6 +30,11 @@
         android:layout_marginLeft="48dp"
         android:layout_marginRight="48dp">
 
+        <TextView
+            android:id="@+id/register_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="666" />
         <!--用户名-->
         <EditText
             android:id="@+id/register_username"
@@ -83,6 +87,7 @@
             android:background="@color/white_alpha_240"
             android:paddingBottom="8dp"
             android:paddingTop="8dp"
+            android:enabled="false"
             android:text="@string/get_valid_code"
             android:textColor="@color/grey_700" />
 

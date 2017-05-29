@@ -34,7 +34,7 @@
                     android:layout_marginTop="40dp"
                     android:background="@drawable/search_bar_bg"
                     android:hint="Searching..."
-                    android:imeOptions="actionSearch"
+                    android:theme="@style/EditText"
                     android:maxLines="1"
                     android:textSize="12sp" />
 

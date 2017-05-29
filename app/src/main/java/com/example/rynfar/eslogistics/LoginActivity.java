@@ -1,11 +1,8 @@
 package com.example.rynfar.eslogistics;
 
-import android.app.DownloadManager;
-import android.app.VoiceInteractor;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -14,13 +11,7 @@ import android.widget.EditText;
 import com.example.rynfar.eslogistics.tools.Tools;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -34,7 +25,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login);/*
+        getWindow().setStatusBarColor(Color.TRANSPARENT);
+        getWindow().setNavigationBarColor(Color.TRANSPARENT);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);*/
         login_username = (EditText) findViewById(R.id.login_username);
         login_pwd = (EditText) findViewById(R.id.login_pwd);
         Button button = (Button) findViewById(R.id.register_btn_login);
