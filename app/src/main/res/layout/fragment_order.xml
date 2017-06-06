@@ -1,12 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
+        android:layout_marginTop="@dimen/status_bar_height"
         android:id="@+id/order_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -123,7 +122,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:text="发货地址："
+                    android:text="@string/shipper_address"
                     android:textSize="16sp" />
                 <!--发货-省-->
                 <Spinner
@@ -186,7 +185,7 @@
                 android:background="@drawable/edit_bg"
                 android:inputType="textMultiLine"
                 android:lines="3"
-                android:hint="街道路门牌号"/>
+                android:hint="@string/shipper_location_detail"/>
 
 
             <TextView
@@ -201,7 +200,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="收货人信息"
+                android:text="@string/shipper_info"
                 android:textColor="@color/grey_400"
                 android:textSize="24sp" />
 
@@ -220,7 +219,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:text="收货人："
+                    android:text="@string/receiver_name"
                     android:textSize="16sp" />
                 <!--收货人-->
                 <EditText
@@ -291,7 +290,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:text="收货地址："
+                    android:text="@string/receiver_location"
                     android:textSize="16sp" />
                 <!--收货地址-省-->
                 <Spinner
@@ -354,7 +353,7 @@
                 android:inputType="textMultiLine"
                 android:background="@drawable/edit_bg"
                 android:lines="3"
-                android:hint="街道路门牌号"/>
+                android:hint="@string/receiver_location_detail"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -367,7 +366,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="货物信息"
+                android:text="@string/goods_info"
                 android:textColor="@color/grey_400"
                 android:textSize="24sp" />
 
@@ -386,7 +385,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:text="货物名称："
+                    android:text="@string/goods_name"
                     android:textSize="16sp" />
                 <!--货物名称-->
                 <EditText
@@ -409,7 +408,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:text="货物重量："
+                    android:text="@string/goods_weight"
                     android:textSize="16sp" />
                 <!--货物重量-->
                 <EditText
@@ -437,7 +436,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:text="货物体积："
+                    android:text="@string/goods_volume"
                     android:textSize="16sp" />
                 <!--货物体积-->
                 <EditText
@@ -466,7 +465,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:text="货物件数："
+                    android:text="@string/goods_num"
                     android:textSize="16sp" />
                 <!--货物件数-->
                 <EditText
@@ -494,7 +493,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:text="货物包装："
+                    android:text="@string/goods_pack"
                     android:textSize="16sp" />
                 <!--货物包装-->
                 <EditText
@@ -517,7 +516,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
-                    android:text="注：我们工作人员会在接货时重新称重，此估算仅供参考。"
+                    android:text="@string/tips_estimate"
                     android:textColor="@color/grey_400"
                     android:textSize="12sp" />
 
@@ -536,7 +535,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="服务信息"
+                android:text="@string/serve_info"
                 android:textColor="@color/grey_400"
                 android:textSize="24sp" />
 
@@ -555,7 +554,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:text="送货方式："
+                    android:text="@string/deliver_mode"
                     android:textSize="16sp" />
                 <!--送货方式-->
                 <Spinner
@@ -582,7 +581,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:text="付款方式："
+                    android:text="@string/pay_mode"
                     android:textSize="16sp" />
                 <!--付款方式-->
                 <Spinner
@@ -606,7 +605,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:text="托运备注："
+                    android:text="@string/check_mark"
                     android:textSize="16sp" />
                 <!--托运备注-->
                 <EditText
@@ -619,7 +618,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/edit_bg"
                     android:inputType="textMultiLine"
-                    android:hint="输入内容不得超过80个字"
+                    android:hint="@string/_80"
                     android:lines="3" />
             </LinearLayout>
 
@@ -635,7 +634,7 @@
                     android:layout_width="220dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="我已理解并遵守服务条款"
+                    android:text="@string/i_agree"
                     android:textColor="@color/blue_400"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -654,7 +653,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/green_300"
-                    android:text="提交订单"
+                    android:text="@string/submit_order"
                     android:textColor="@color/white" />
             </LinearLayout>
 

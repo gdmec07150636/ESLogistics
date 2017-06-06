@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
             }else{
-                Tools.ShowShotToast(LoginActivity.this,"用户名或密码错误！");
+                Tools.ShowShortToast(LoginActivity.this,"用户名或密码错误！");
             }
 
         } catch (Exception e) {

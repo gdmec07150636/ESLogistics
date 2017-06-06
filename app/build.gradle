@@ -24,9 +24,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    // https://mvnrepository.com/artifact/com.ashokvarma.android/bottom-navigation-bar
     compile group: 'com.ashokvarma.android', name: 'bottom-navigation-bar', version: '1.4.1'
-    // use to bitmap blur and more
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'net.qiujuer.genius:ui:2.0.0'
     compile 'net.qiujuer.genius:res:2.0.0'
@@ -36,5 +34,7 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.8.0'
     compile 'cn.carbs.android:AvatarImageView:1.0.4'
     compile 'com.android.support:support-v4:25.3.1'
+    compile 'cn.yipianfengye.android:zxing-library:2.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
     testCompile 'junit:junit:4.12'
 }

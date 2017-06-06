@@ -7,7 +7,6 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.rynfar.eslogistics.tools.AccountValidatorUtil;
 import com.example.rynfar.eslogistics.tools.Tools;
@@ -77,8 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String s = checkForm();
                 if (!"AllPassed".endsWith(s)) {
-                    TextView tv = (TextView) RegisterActivity.this.findViewById(R.id.register_tip);
-                    tv.setText(s);
+                    Tools.ShowLongToast(getApplicationContext(),s);
                     Log.d("onClick", "onClick: " + s);
                 }else{
                     new sendRequest().start();
@@ -88,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
         login_weChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Tools.ShowShotToast(v.getContext(), "此功能有待开发");
+                Tools.ShowShortToast(v.getContext(), "此功能有待开发");
             }
         });
         get_valid_code.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
         register_question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Tools.ShowShotToast(v.getContext(), "此功能有待开发");
+                Tools.ShowShortToast(v.getContext(), "此功能有待开发");
             }
         });
 
@@ -125,7 +123,7 @@ public class RegisterActivity extends AppCompatActivity {
             String username = register_username.getText().toString();
             String phone = register_phone.getText().toString();
             String pwd = register_pwd.getText().toString();
-            String valid = register_code.getTag().toString();
+            String valid = register_code.getText().toString();
             OkHttpClient client = new OkHttpClient();
             RequestBody body = new FormBody.Builder().add("username", username).add("valid",valid).add("phone", phone).add("password", pwd).build();
             Request request = new Request.Builder().url("http://10.0.2.2/tt/aa.php").post(body).build();

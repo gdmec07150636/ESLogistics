@@ -5,26 +5,17 @@
     android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="240dp">
+        android:layout_height="260dp"
+        android:paddingTop="@dimen/status_bar_height">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_me"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:contentScrim="@drawable/toolbar_bg"
-
-            >
-
-            <ImageView
-                android:id="@+id/head_bg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/home_bg"
-                />
-             
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -34,7 +25,8 @@
                     android:id="@+id/head_icon"
                     android:layout_width="96dp"
                     android:layout_height="96dp"
-                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
                     android:src="@mipmap/home_bg" />
 
                 <TextView
@@ -43,15 +35,16 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/head_icon"
                     android:layout_centerHorizontal="true"
+                    android:text="@string/username"
                     android:textColor="@color/white_alpha_240"
-                    android:textColorHighlight="@color/black_alpha_32"
-                    android:text="@string/username" />
+                    android:textColorHighlight="@color/black_alpha_32" />
             </RelativeLayout>
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"/>
+                app:layout_collapseMode="pin" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 

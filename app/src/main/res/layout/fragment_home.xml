@@ -17,34 +17,38 @@
             android:orientation="horizontal">
 
             <RelativeLayout
+                android:id="@+id/home_bg"
                 android:layout_width="match_parent"
-                android:layout_height="240dp"
+                android:layout_height="260dp"
                 android:background="@mipmap/home_bg"
                 android:elevation="4dp"
                 android:focusable="true"
                 android:focusableInTouchMode="true">
 
                 <EditText
-                    android:id="@+id/search_bar"
+                    android:id="@+id/search_order"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="40dp"
+                    android:inputType="number"
                     android:background="@drawable/search_bar_bg"
-                    android:hint="Searching..."
-                    android:theme="@style/EditText"
+                    android:hint="@string/search_order"
+                    android:imeOptions="actionSearch"
+                    android:singleLine="true"
                     android:maxLines="1"
                     android:textSize="12sp" />
 
                 <net.qiujuer.genius.ui.widget.Button
+                    android:id="@+id/scan_code"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:scaleY="0.6"
                     android:scaleX="0.6"
                     android:layout_alignParentEnd="true"
-                    android:layout_alignTop="@+id/search_bar"
+                    android:layout_alignTop="@+id/search_order"
                     android:layout_marginRight="20dp"
                     app:gTouchEffect="ease"
                     android:background="@mipmap/btn_code" />

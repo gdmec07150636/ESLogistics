@@ -31,8 +31,8 @@ public class LocationNamesHelper {
     }
 
     private LocationNamesHelper(Context context){
-        writeSql(context);
         DB_PATH = "/data/data/"+context.getPackageName()+"/databases/";
+        writeSql(context);
     }
 
     public void writeSql(Context context) {

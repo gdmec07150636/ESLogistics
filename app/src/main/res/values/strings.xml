@@ -4,20 +4,17 @@
     <string name="order">下单</string>
     <string name="message">消息</string>
     <string name="me">我的</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="message_title">消息中心</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="newest_info">最新信息</string>
     <string name="shipper">发货人：</string>
     <string name="shipper_name">发货人：</string>
     <string name="shipper_phone">手机号码：</string>
     <string name="phone_number">手机号码：</string>
+    <string name="phone_number1">手机号码</string>
     <string name="telephone">固定电话：</string>
-    <string name="shipper_info">发货人信息</string>
-    <string name="receiver_info">收货人信息</string>
+    <string name="shipper_info">发货人信息：</string>
+    <string name="receiver_info">收货人信息：</string>
     <string name="quick_order">快速下单</string>
     <string name="local">附近网点</string>
     <string name="contacts">联系客服</string>
@@ -36,4 +33,27 @@
     <string name="my_order">我的订单</string>
     <string name="order_info">订单详情</string>
     <string name="not_dev_yet">此功能有待开发</string>
+    <string name="shipper_address">发货地址：</string>
+    <string name="shipper_location_detail">街道路门牌号</string>
+    <string name="receiver_name">收货人：</string>
+    <string name="receiver_location">收货地址：</string>
+    <string name="receiver_location_detail">街道路门牌号</string>
+    <string name="goods_info">货物信息：</string>
+    <string name="goods_name">货物名称：</string>
+    <string name="goods_weight">货物重量：</string>
+    <string name="goods_volume">货物体积：</string>
+    <string name="goods_num">货物件数：</string>
+    <string name="goods_pack">货物包装：</string>
+    <string name="tips_estimate">注：我们工作人员会在接货时重新称重，此估算仅供参考。</string>
+    <string name="serve_info">服务信息：</string>
+    <string name="deliver_mode">送货方式：</string>
+    <string name="pay_mode">付款方式：</string>
+    <string name="check_mark">托运备注：</string>
+    <string name="_80">输入内容不得超过80个字</string>
+    <string name="i_agree">我已理解并遵守服务条款</string>
+    <string name="submit_order">提交订单</string>
+    <string name="search_order">搜索单号</string>
+    <string name="title_activity_scan">ScanActivity</string>
+    <string name="msg_default_status">6666666</string>
+    <string name="image_code_error">错误</string>
 </resources>
