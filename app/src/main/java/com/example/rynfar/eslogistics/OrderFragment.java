@@ -1,6 +1,7 @@
 package com.example.rynfar.eslogistics;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -25,28 +26,8 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class OrderFragment extends Fragment {
-    EditText shipper_name;
-    EditText shipper_phone;
-    EditText shipper_tel;
-    EditText shipper_location_detail;
-    EditText receiver_name;
-    EditText receiver_phone;
-    EditText receiver_tel;
-    EditText receiver_detail;
-    EditText good_name;
-    EditText good_weight;
-    EditText good_volume;
-    EditText good_count;
-    EditText good_package;
-    EditText ship_mark;
-    Spinner shipper_province;
-    Spinner shipper_city;
-    Spinner shipper_area;
-    Spinner receiver_province;
-    Spinner receiver_city;
-    Spinner receiver_area;
-    Spinner ship_mode;
-    Spinner pay_mode;
+    EditText shipper_name, shipper_phone, shipper_tel, shipper_location_detail, receiver_name, receiver_phone, receiver_tel, receiver_detail, good_name, good_weight, good_volume, good_count, good_package, ship_mark;
+    Spinner shipper_province,shipper_city,shipper_area,receiver_province,receiver_city,receiver_area,ship_mode,pay_mode;
     CheckBox receive_article;
     Button submit_order;
     private List<String> province_list;
@@ -55,9 +36,12 @@ public class OrderFragment extends Fragment {
     private ArrayAdapter province_adapter;
     private ArrayAdapter city_adapter;
     private ArrayAdapter area_adapter;
+    private LocationNamesHelper locationNames;
+    Context context;
 
     public OrderFragment() {
         // Required empty public constructor
+
     }
 
 
@@ -70,67 +54,18 @@ public class OrderFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        context = getContext();
+        locationNames = LocationNamesHelper.getInstance(context);
         View v = inflater.inflate(R.layout.fragment_order, container, false);
         Toolbar toolbar = (Toolbar) v.findViewById(R.id.order_toolbar);
         toolbar.setTitle(R.string.order);
-        final LocationNamesHelper locationNames = LocationNamesHelper.getInstance(getContext());
         init(v);
         province_list = locationNames.getProvinceData();
-        province_adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, province_list);
+        province_adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, province_list);
         receiver_province.setAdapter(province_adapter);
-        receiver_province.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String tag = parent.getSelectedItem().toString();
-                city_list = locationNames.getCityData(tag);
-                city_adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, city_list);
-                receiver_city.setAdapter(city_adapter);
-                receiver_city.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        String tag = parent.getSelectedItem().toString();
-                        area_list = locationNames.getAreaData(tag);
-                        Log.d("onItemSelected: ", city_list.toString());
-                        area_adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, area_list);
-                        receiver_area.setAdapter(area_adapter);
-                        Log.d("onItemSelected: ", area_list.toString());
-                    }
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-                    }
-                });
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-
-
+        receiver_province.setOnItemSelectedListener(new ProvinceListener());
         shipper_province.setAdapter(province_adapter);
-        shipper_province.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                city_list = locationNames.getCityData(parent.getSelectedItem().toString());
-                city_adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, city_list);
-                shipper_city.setAdapter(city_adapter);
-                shipper_city.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        area_list = locationNames.getAreaData(parent.getSelectedItem().toString());
-                        area_adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, area_list);
-                        shipper_area.setAdapter(area_adapter);
-                    }
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-                    }
-                });
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-
+        shipper_province.setOnItemSelectedListener(new CityListener());
         return v;
     }
 
@@ -159,5 +94,59 @@ public class OrderFragment extends Fragment {
         pay_mode = (Spinner) v.findViewById(R.id.pay_mode);
         receive_article = (CheckBox) v.findViewById(R.id.receive_article);
         submit_order = (Button) v.findViewById(R.id.submit_order);
+    }
+
+    class ProvinceListener implements AdapterView.OnItemSelectedListener {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            String tag = parent.getSelectedItem().toString();
+            city_list = locationNames.getCityData(tag);
+            city_adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, city_list);
+            receiver_city.setAdapter(city_adapter);
+            receiver_city.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    String tag = parent.getSelectedItem().toString();
+                    area_list = locationNames.getAreaData(tag);
+                    Log.d("onItemSelected: ", city_list.toString());
+                    area_adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, area_list);
+                    receiver_area.setAdapter(area_adapter);
+                    Log.d("onItemSelected: ", area_list.toString());
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                }
+            });
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    }
+
+    class CityListener implements AdapterView.OnItemSelectedListener {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            city_list = locationNames.getCityData(parent.getSelectedItem().toString());
+            city_adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, city_list);
+            shipper_city.setAdapter(city_adapter);
+            shipper_city.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    area_list = locationNames.getAreaData(parent.getSelectedItem().toString());
+                    area_adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, area_list);
+                    shipper_area.setAdapter(area_adapter);
+                }
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                }
+            });
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+        }
     }
 }

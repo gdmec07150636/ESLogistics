@@ -13,9 +13,11 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * Created by rynfar on 2017/5/29.
  */
+
 
 public class LocationNamesHelper {
     private String DB_PATH = null;
@@ -30,10 +32,11 @@ public class LocationNamesHelper {
         return locationNames;
     }
 
-    private LocationNamesHelper(Context context){
-        DB_PATH = "/data/data/"+context.getPackageName()+"/databases/";
+    private LocationNamesHelper(Context context) {
+        DB_PATH = "/data/data/" + context.getPackageName() + "/databases/";
         writeSql(context);
     }
+
 
     public void writeSql(Context context) {
         // 检查 SQLite 数据库文件是否存在
@@ -49,14 +52,12 @@ public class LocationNamesHelper {
                 InputStream is = context.getResources().openRawResource(R.raw.weather);
                 // 输出流
                 OutputStream os = new FileOutputStream(DB_PATH + DB_NAME);
-
                 // 文件写入
                 byte[] buffer = new byte[1024];
                 int length;
                 while ((length = is.read(buffer)) > 0) {
                     os.write(buffer, 0, length);
                 }
-
                 // 关闭文件流
                 os.flush();
                 os.close();
@@ -66,7 +67,7 @@ public class LocationNamesHelper {
                 e.printStackTrace();
                 isWritten = false;
             }
-        }else{
+        } else {
             isWritten = true;
         }
     }
@@ -100,7 +101,9 @@ public class LocationNamesHelper {
             }
         }
         return city_list;
+
     }
+
 
     public List<String> getAreaData(String city) {
         List<String> area_list;
@@ -115,5 +118,6 @@ public class LocationNamesHelper {
         }
         return area_list;
     }
+
 
 }
