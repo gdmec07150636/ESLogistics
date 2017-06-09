@@ -19,7 +19,13 @@ import android.widget.Spinner;
 
 import com.example.rynfar.eslogistics.tools.LocationNamesHelper;
 
+import org.json.JSONObject;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static android.content.ContentValues.TAG;
 
 
 /**
@@ -37,6 +43,7 @@ public class OrderFragment extends Fragment {
     private ArrayAdapter city_adapter;
     private ArrayAdapter area_adapter;
     private LocationNamesHelper locationNames;
+    Map<String,String> order;
     Context context;
 
     public OrderFragment() {
@@ -59,17 +66,38 @@ public class OrderFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_order, container, false);
         Toolbar toolbar = (Toolbar) v.findViewById(R.id.order_toolbar);
         toolbar.setTitle(R.string.order);
-        init(v);
-        province_list = locationNames.getProvinceData();
-        province_adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, province_list);
-        receiver_province.setAdapter(province_adapter);
-        receiver_province.setOnItemSelectedListener(new ProvinceListener());
-        shipper_province.setAdapter(province_adapter);
-        shipper_province.setOnItemSelectedListener(new CityListener());
+        initView(v);
+        order = new HashMap<>();
         return v;
     }
 
-    void init(View v) {
+    private void getOrderList() {
+        //Tools.ShowShortToast(context,shipper_name.getText().toString());
+        order.put("shipper_name",shipper_name.getText().toString());
+        order.put("shipper_phone",shipper_phone.getText().toString());
+        order.put("shipper_tel",shipper_tel.getText().toString());
+        order.put("shipper_location_detail",shipper_location_detail.getText().toString());
+        order.put("receiver_name",receiver_name.getText().toString());
+        order.put("receiver_phone",receiver_phone.getText().toString());
+        order.put("receiver_tel",receiver_tel.getText().toString());
+        order.put("receiver_detail",receiver_detail.getText().toString());
+        order.put("good_name",good_name.getText().toString());
+        order.put("good_weight",good_weight.getText().toString());
+        order.put("good_volume",good_volume.getText().toString());
+        order.put("good_count",good_count.getText().toString());
+        order.put("good_package",good_package.getText().toString());
+        order.put("ship_mark",ship_mark.getText().toString());
+        /*order.add(((TextView)shipper_province.getSelectedView()).getText().toString());
+        order.add(((TextView)shipper_city.getSelectedView()).getText().toString());
+        order.add(((TextView)shipper_area.getSelectedView()).getText().toString());
+        order.add(((TextView)receiver_province.getSelectedView()).getText().toString());
+        order.add(((TextView)receiver_city.getSelectedView()).getText().toString());
+        order.add(((TextView)receiver_area.getSelectedView()).getText().toString());*/
+        JSONObject jo = new JSONObject(order);
+        Log.d(TAG, "getOrderList: "+jo.toString());
+    }
+
+    void initView(View v) {
         shipper_name = (EditText) v.findViewById(R.id.shipper_name);
         shipper_phone = (EditText) v.findViewById(R.id.shipper_phone);
         shipper_tel = (EditText) v.findViewById(R.id.shipper_tel);
@@ -94,6 +122,18 @@ public class OrderFragment extends Fragment {
         pay_mode = (Spinner) v.findViewById(R.id.pay_mode);
         receive_article = (CheckBox) v.findViewById(R.id.receive_article);
         submit_order = (Button) v.findViewById(R.id.submit_order);
+        province_list = locationNames.getProvinceData();
+        province_adapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, province_list);
+        receiver_province.setAdapter(province_adapter);
+        receiver_province.setOnItemSelectedListener(new ProvinceListener());
+        shipper_province.setAdapter(province_adapter);
+        shipper_province.setOnItemSelectedListener(new CityListener());
+        submit_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOrderList();
+            }
+        });
     }
 
     class ProvinceListener implements AdapterView.OnItemSelectedListener {

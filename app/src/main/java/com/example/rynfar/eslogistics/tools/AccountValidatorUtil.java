@@ -16,6 +16,11 @@ public class AccountValidatorUtil {
     public static final String REGEX_USERNAME = "^[a-zA-Z]\\w{5,20}$";
 
     /**
+     * 验证姓名
+     */
+    public String reg = "^(([\u4e00-\u9fa5]{2,8})|([a-zA-Z]{2,16}))$";
+
+    /**
      * 正则表达式：验证密码
      */
     public static final String REGEX_PASSWORD = "^([A-Z]|[a-z]|[0-9]|[`~!@#$%^&*()+=|{}':;',\\\\\\\\[\\\\\\\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“'。，、？]){6,20}$";

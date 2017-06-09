@@ -20,6 +20,7 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         viewPager = (ViewPager) findViewById(R.id.viewpager_main);
+        viewPager.setOffscreenPageLimit(4);
         bar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
         bar.setBarBackgroundColor(R.color.navigation_bg)
                 .setMode(BottomNavigationBar.MODE_FIXED)
@@ -50,7 +51,6 @@ public class Main extends AppCompatActivity implements BottomNavigationBar.OnTab
         });
         setupViewPager(viewPager);
     }
-
 
     private void setupViewPager(ViewPager viewPager) {
         ArrayList<Fragment> fragments = new ArrayList<>();
