@@ -1,6 +1,7 @@
 package com.example.rynfar.eslogistics;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -30,6 +31,7 @@ import cn.carbs.android.avatarimageview.library.AvatarImageView;
 /**
  * A simple {@link Fragment} subclass.
  */
+@SuppressLint("ValidFragment")
 public class MeFragment extends Fragment {
 
     RecyclerView mRecyclerView;

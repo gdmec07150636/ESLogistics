@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,9 +31,9 @@ public class MessageFragment extends Fragment {
     }
 
     private void init() {
-        Log.d("aaaaaaaa", "init: "+(list==null));
+        Log.d("aaaaaaaa", "init: " + (list == null));
         if (list == null)
-        list = new ArrayList<>();
+            list = new ArrayList<>();
         initData(list);
     }
 
@@ -63,4 +64,20 @@ public class MessageFragment extends Fragment {
         }
     }
 
+    private int getStatusBarHeight() {
+        Class<?> c = null;
+        Object obj = null;
+        Field field = null;
+        int x = 0, sbar = 0;
+        try {
+            c = Class.forName("com.android.internal.R$dimen");
+            obj = c.newInstance();
+            field = c.getField("status_bar_height");
+            x = Integer.parseInt(field.get(obj).toString());
+            sbar = getContext().getResources().getDimensionPixelSize(x);
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        return sbar;
+    }
 }

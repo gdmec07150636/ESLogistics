@@ -2,7 +2,9 @@ package com.example.rynfar.eslogistics;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +12,6 @@ import android.widget.EditText;
 
 import com.example.rynfar.eslogistics.tools.Tools;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import okhttp3.FormBody;
@@ -20,6 +21,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class LoginActivity extends AppCompatActivity {
+    private static final String TAG = "6666";
     EditText login_username, login_pwd;
 
     @Override
@@ -61,17 +63,21 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * 登录
+     */
     private void sendRequestWithHttp() {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     OkHttpClient client = new OkHttpClient();
-                    RequestBody requestBody = new FormBody.Builder().add("idname", String.valueOf(login_username))
-                            .add("password", String.valueOf(login_pwd)).build();
-                    Request request = new Request.Builder().url("http://10.0.2.2/test.php").post(requestBody).build();
+                    RequestBody requestBody = new FormBody.Builder().add("test", login_username.getText().toString())
+                            .add("password", login_pwd.getText().toString()).build();
+                    Request request = new Request.Builder().url(Const.BASE_URL+Const.LOGIN_SUFFIX).post(requestBody).build();
                     Response response = client.newCall(request).execute();
                     String r = response.body().string();
+                    Log.d(TAG, "run: "+r);
                     parsewithjsonobject(r);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -82,10 +88,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private void parsewithjsonobject(String jsonData) {
         try {
-            JSONArray jsonArray = new JSONArray(jsonData);
-            JSONObject jsonObject = jsonArray.getJSONObject(0);
+            JSONObject jsonObject = new JSONObject(jsonData);
+            //JSONObject jsonObject = jsonArray.getJSONObject(0);
+            Log.d(TAG, "parsewithjsonobject: "+jsonObject.getString("status"));
             String type = jsonObject.getString("status");
-            if(type.equals("success")){
+            if(type.equals("success1")|type.equals("success2")){
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -95,7 +102,9 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
             }else{
+                Looper.prepare();
                 Tools.ShowShortToast(LoginActivity.this,"用户名或密码错误！");
+                Looper.loop();
             }
 
         } catch (Exception e) {

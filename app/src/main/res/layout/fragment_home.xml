@@ -125,13 +125,12 @@
                 android:text="@string/newest_info"
                 android:textSize="16sp" />
 
-            <ListView
+            <android.support.v7.widget.RecyclerView
+                android:background="@color/white"
                 android:id="@+id/home_list"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:divider="@color/transparent"
-                android:dividerHeight="0dip"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp" />
         </LinearLayout>

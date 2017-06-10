@@ -5,10 +5,10 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:layout_marginTop="@dimen/status_bar_height"
         android:id="@+id/order_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/status_bar_height"
         android:background="@drawable/toolbar_bg">
 
     </android.support.v7.widget.Toolbar>
@@ -98,7 +98,6 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:inputType="phone"
                     android:text="@string/telephone"
                     android:textSize="16sp" />
                 <!--固定电话-->
@@ -110,7 +109,8 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/edit_bg" />
+                    android:background="@drawable/edit_bg"
+                    android:inputType="phone" />
             </LinearLayout>
 
             <LinearLayout
@@ -183,9 +183,9 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/edit_bg"
+                android:hint="@string/shipper_location_detail"
                 android:inputType="textMultiLine"
-                android:lines="3"
-                android:hint="@string/shipper_location_detail"/>
+                android:lines="3" />
 
 
             <TextView
@@ -242,6 +242,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
+                    android:inputType="phone"
                     android:text="@string/phone_number"
                     android:textSize="16sp" />
                 <!--收货人-手机号-->
@@ -266,7 +267,6 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right|center_vertical"
-                    android:inputType="phone"
                     android:text="@string/telephone"
                     android:textSize="16sp" />
                 <!--收货人-固定电话-->
@@ -278,7 +278,8 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/edit_bg" />
+                    android:background="@drawable/edit_bg"
+                    android:inputType="phone" />
             </LinearLayout>
 
             <LinearLayout
@@ -350,10 +351,10 @@
                 android:layout_marginLeft="116dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:inputType="textMultiLine"
                 android:background="@drawable/edit_bg"
-                android:lines="3"
-                android:hint="@string/receiver_location_detail"/>
+                android:hint="@string/receiver_location_detail"
+                android:inputType="textMultiLine"
+                android:lines="3" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -419,7 +420,8 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/edit_bg" />
+                    android:background="@drawable/edit_bg"
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -447,7 +449,8 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/edit_bg" />
+                    android:background="@drawable/edit_bg"
+                    android:inputType="numberDecimal" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -476,7 +479,8 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="8dp"
-                    android:background="@drawable/edit_bg" />
+                    android:background="@drawable/edit_bg"
+                    android:inputType="number" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -617,8 +621,8 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/edit_bg"
-                    android:inputType="textMultiLine"
                     android:hint="@string/_80"
+                    android:inputType="textMultiLine"
                     android:lines="3" />
             </LinearLayout>
 
@@ -642,10 +646,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
                 <!--提交订单-->
                 <net.qiujuer.genius.ui.widget.Button
